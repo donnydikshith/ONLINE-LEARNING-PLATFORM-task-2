@@ -51,5 +51,15 @@ Summary of Tasks:
 Created the initial layout and design.
 Developed interactive elements like quizzes, courses, and progress tracking.
 Implemented JavaScript functions to handle user interactions (quiz answers and progress).
-Designed the platform to be responsive and visually appealing. 
+Designed the platform to be responsive and visually appealing.
 
+#OUTPUT
+
+![Image](https://github.com/user-attachments/assets/d026f755-542f-4692-9ac8-9c762a0db7ae)
+
+![Image](https://github.com/user-attachments/assets/fed0cfd7-1a50-41d2-be5a-b1b03f6e8e45)
+
+![Image](https://github.com/user-attachments/assets/b3c28d0a-c07b-4683-8a2b-e3987e98a70e)
+
+
+![Image](https://github.com/user-attachments/assets/552f9831-40bb-42bd-9451-3939d784516a)
