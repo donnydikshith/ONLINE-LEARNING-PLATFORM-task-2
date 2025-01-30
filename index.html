@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .enter-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://img.freepik.com/free-vector/geometric-science-education-background-vector-gradient-blue-digital-remix_53876-125993.jpg?t=st=1738236837~exp=1738240437~hmac=986f66bc66dcdab821aa470eae6a3e1dcd3544f120f82100dd7c0dafd4f0e5ea&w=996);
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #e0e0e0;
+        }
+        .enter-page button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        nav a {
+            margin: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #333;
+            padding: 10px 20px;
+            background: #ff9800;
+            border-radius: 5px;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .ved{
+            width: 40vw;
+            height: 60vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="enter-page" id="enterPage">
+        <h1>Welcome to the Online Learning Platform</h1>
+        <button onclick="enterSite()">Enter</button>
+    </div>
+
+    <div id="mainContent" class="hidden">
+        <h1>Online Learning Platform</h1>
+        <nav>
+            <a href="#courses">Courses</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#progress">Progress</a>
+        </nav>
+
+        <div class="container" id="courses">
+            <h2>Available Courses</h2>
+
+            <!-- Course 1 -->
+            <div class="course">
+                <h1>ENGLISH</h1>
+                <p>Learn the basics of English, including how to speak and write content.</p>
+                <video controls>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="course">
+                <h1>MATHS</h1>
+                <p>Learn how to Solve problems .</p>
+                <div class="embed-responsive embed-responsive-16by9 ">
+                    <iframe class="embed-responsive-item ved" src="https://www.youtube.com/embed/AGKPeStDipE?rel=0" allowfullscreen></iframe>
+                  </div>
+            </div>
+
+            <!-- Add more courses here -->
+        </div>
+
+        <div class="container" id="quiz">
+            <h2>Quiz Section</h2>
+
+            <p>Question: What does 5 addtion 5?</p>
+            <button onclick="checkAnswer(true)">11</button>
+            <button onclick="checkAnswer(false)">5</button>
+            <button onclick="checkAnswer(false)">6</button>
+
+            <p>Score: <span id="score">0</span></p>
+        </div>
+        <div class="container" id="quiz">
+            <h2>Quiz Section</h2>
+
+            <p>Question: What does 4 addtion 5?</p>
+            <button onclick="checkAnswer(false)">11</button>
+            <button onclick="checkAnswer(true)">9</button>
+            <button onclick="checkAnswer(false)">6</button>
+
+            <p>Score: <span id="score">0</span></p>
+        </div>
+
+        <div class="container" id="progress">
+            <h2>Progress Tracking</h2>
+            <p>Your Learning Progress:</p>
+            <div style="width: 100%; background-color: #e0e0e0; border-radius: 5px;">
+                <div id="progressBar" style="height: 20px; width: 0%; background-color: #4CAF50; border-radius: 5px;"></div>
+            </div>
+            <p>Progress: <span id="progressPercentage">0%</span></p>
+
+            <button onclick="updateProgress()">Complete Task</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to hide the enter page and show the main content
+        function enterSite() {
+            document.getElementById("enterPage").classList.add("hidden");
+            document.getElementById("mainContent").classList.remove("hidden");
+        }
+
+        // Quiz functionality
+        let score = 0;
+
+        function checkAnswer(isCorrect) {
+            if (isCorrect) {
+                score++;
+            }
+            document.getElementById("score").innerText = score;
+        }
+
+        // Progress tracking functionality
+        let progress = 0;
+
+        function updateProgress() {
+            progress += 10; // Update by 10% each time
+            if (progress > 100) progress = 100; // Ensure it doesn't exceed 100%
+            document.getElementById("progressBar").style.width = progress + '%';
+            document.getElementById("progressPercentage").innerText = progress + '%';
+        }
+        
+    </script>
+</body>
+</html>
